@@ -1,0 +1,16 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 60px;
+    background-image: url('../img/login.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.login-background {
+    display: grid;
+    place-items: center; 
+    height: 100vh;
+   
+}
