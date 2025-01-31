@@ -1,0 +1,36 @@
+﻿@{
+	ViewData["Title"] = "Registro";
+}
+
+<div class="login-container">
+	<div class="login-form-section">
+		<h2 class="text-center mb-4">Registro</h2>
+		<form>
+			<div class="mb-3">
+				<input type="text" class="form-control" id="username" placeholder="Usuario">
+			</div>
+			<div class="mb-3">
+				<input type="text" class="form-control" id="correo" placeholder="Correo">
+			</div>
+			<div class="mb-3">
+				<input type="text" class="form-control" id="cedula" placeholder="Correo">
+			</div>
+			<div class="mb-3">
+				<input type="password" class="form-control" id="password" placeholder="Contraseña">
+			</div>
+
+			<button type="button" class="btn btn-success w-100" onclick="window.location.href='/Login'">
+				Confirmar
+			</button>
+		</form>
+	</div>
+	<div class="login-info-section">
+		<h2>Bienvenido!</h2>
+		<p>
+			Esperemos disfrute su experiencia con nuestra página de tours, donde encontrará las mejores reservaciones.
+		</p>
+		<p>
+			¿Ya tiene una cuenta? <a asp-controller="Login" asp-action="Login" style="text-decoration: underline;">Iniciar Sesión</a>
+		</p>
+	</div>
+</div>

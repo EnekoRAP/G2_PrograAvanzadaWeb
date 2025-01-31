@@ -1,0 +1,32 @@
+﻿@{
+	ViewData["Title"] = "Inicio de Sesión";
+}
+
+<div class="login-container">
+	<div class="login-form-section">
+		<h2 class="text-center mb-4">Iniciar Sesión</h2>
+		<form>
+			<div class="mb-3">
+				<input type="text" class="form-control" id="username" placeholder="Usuario">
+			</div>
+
+			<div class="mb-3">
+				<input type="password" class="form-control" id="password" placeholder="Contraseña">
+			</div>
+
+			<button type="submit" class="btn btn-success w-100" asp-controller="Home" asp-action="Home">Confirmar</button>
+		</form>
+	</div>
+	<div class="login-info-section">
+		<h2>Bienvenido!</h2>
+		<p>
+			Esperemos disfrute su experiencia con nuestra página de tours, donde encontrará las mejores reservaciones.
+		</p>
+		<p>
+			¿No posee cuenta? <a asp-controller="Registro" asp-action="Registro" style="text-decoration: underline;">Registrarse</a>
+		</p>
+	</div>
+</div>
+
+
+

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "G2PracticaProgramada1/1.0.0": {
+        "runtime": {
+          "G2PracticaProgramada1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "G2PracticaProgramada1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
