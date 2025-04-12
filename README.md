@@ -1,2 +1,2 @@
-# G2_PracticasProgramadas
- Elaboración de la Prácticas Programadas del curso Programación Avanzada Web
+# G2_PrograAvanzadaWeb
+Repositorio base para Prácticas Programadas y Casos de Estudio del curso de Programación Avanzada Web
