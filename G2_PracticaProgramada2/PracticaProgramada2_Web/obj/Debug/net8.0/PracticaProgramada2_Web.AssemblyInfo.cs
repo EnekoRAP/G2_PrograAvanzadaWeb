@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PracticaProgramada2_Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bba39f7b65a0cb2e03ee8a161b4a80e3b475c676")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae87fdaf40b1c2a3c5f6a867c04d2a30cfe8ca97")]
 [assembly: System.Reflection.AssemblyProductAttribute("PracticaProgramada2_Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PracticaProgramada2_Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
