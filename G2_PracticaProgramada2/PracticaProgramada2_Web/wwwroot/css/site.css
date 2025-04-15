@@ -18,12 +18,10 @@ body {
     background-repeat: no-repeat;
 }
 
-
 .logo-container {
     text-align: center;
     padding: 10px 0;
 }
-
 
 .sidebar-logo {
     width: 80%;
@@ -32,7 +30,6 @@ body {
     margin-bottom: 20px; 
 }
 
-/* Sidebar */
 .sidebar {
     background-color: #007bff;
     width: 70px;
@@ -130,14 +127,11 @@ body {
     align-self: center;
 }
 
-
-/* Contenido principal */
 .main-content {
     margin-left: 90px;
     padding: 3rem 2rem;
 }
 
-/* Tarjetas superiores */
 .header-section {
     display: flex;
     flex-wrap: wrap;
@@ -161,12 +155,6 @@ body {
             background-color: #f0f0f0;
         }
 
-/* Tarjetas generales */
-
-/* Encabezado de tarjeta */
-
-
-/* Botón Morado */
 .btn-primary {
     background-color: #6c3dff;
     border: none;
@@ -181,7 +169,6 @@ body {
         background-color: #582ed1;
     }
 
-/* Formulario */
 form label {
     font-weight: 500;
 }
@@ -204,7 +191,6 @@ form button[type="submit"] {
         background-color: #582ed1;
     }
 
-/* Tabla */
 .table {
     margin-bottom: 0;
 }
@@ -232,13 +218,11 @@ form button[type="submit"] {
     background-color: #f0f4fa;
 }
 
-/* Íconos de acciones */
 a.text-primary i,
 a.text-danger i {
     font-size: 1rem;
 }
 
-/* Pie de tabla */
 tfoot td {
     padding: 1rem;
     font-size: 0.85rem;
@@ -250,11 +234,10 @@ tfoot td {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px; /* O ajustalo según necesités */
+    height: 100px;
     margin-bottom: 2rem;
     text-align: center;
 }
-
 
 .bienvenida {
     opacity: 0;
@@ -269,4 +252,3 @@ tfoot td {
         transform: translateY(0);
     }
 }
-
