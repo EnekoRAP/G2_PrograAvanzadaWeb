@@ -1,0 +1,52 @@
+﻿@model List<ComprasModel>
+
+@{
+    ViewBag.Title = "Consulta";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<link href="~/css/custom.css" rel="stylesheet" />
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="w-100" style="max-width: 1000px;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-center flex-grow-1">Consulta de Compras</h2>
+        </div>
+
+        <div class="table-responsive p-3 rounded-3 bg-white shadow-sm">
+            <table class="table table-bordered align-middle">
+                <thead>
+                    <tr>
+                        <th>Código Compra</th>
+						<th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Saldo</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id_Compra</td>
+                                <td>@item.Descripcion</td>
+                                <td>@item.Precio</td>
+                                <td>@item.Saldo</td>
+                                <td>@item.Estado</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center text-muted">No hay datos disponibles</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+﻿@model List<ComprasModel>
+@{
+    ViewData["Title"] = "Registro de Abono";
+}
+<link href="~/css/customregistro.css" rel="stylesheet" />
+<div class="pantalla-centro">
+    <div class="contenedor-todo">
+        <h1 class="titulo-externo">Realizar Pago Parcial</h1>
+        <div class="tarjeta-formulario">
+            <form id="formAbono" method="post" asp-controller="Registro" asp-action="Registro">
+                <div class="grupo-campo">
+                    <label for="compraId">Compra</label>
+                    <select id="compraId" name="Id_Compra" class="form-control input-lg" required>
+                        <option value="">Seleccione una compra pendiente</option>
+                        @foreach (var compra in Model)
+                        {
+                            <option value="@compra.Id_Compra" data-saldo="@compra.Saldo">
+                                @compra.Descripcion
+                            </option>
+                        }
+                    </select>
+                </div>
+                <div class="grupo-campo">
+                    <label for="saldoAnterior">Saldo Anterior</label>
+                    <input type="text" id="saldoAnterior" name="SaldoAnterior" readonly />
+                </div>
+                <div class="grupo-campo">
+                    <label for="abono">Abono</label>
+                    <input type="number" id="abono" name="Monto" min="0.01" step="0.01" required />
+                    <div class="mensaje-error" id="errorMsg">El abono no puede ser mayor al saldo anterior.</div>
+                </div>
+                <div class="boton-derecha">
+                    <button type="submit" class="btn-abonar">Abonar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Al cambiar la compra, mostrar saldo anterior
+        $('#compraId').change(function () {
+            let opcion = $(this).find(':selected');
+            let saldo = opcion.data('saldo') || '';
+            $('#saldoAnterior').val(saldo);
+        });
+        // Validar abono no mayor al saldo anterior
+        $('#formAbono').submit(function (e) {
+            let saldo = parseFloat($('#saldoAnterior').val());
+            let abono = parseFloat($('#abono').val());
+            if (abono > saldo) {
+                e.preventDefault();
+                $('#abono').addClass('campo-invalido');
+                $('#errorMsg').show();
+            } else {
+                $('#abono').removeClass('campo-invalido');
+                $('#errorMsg').hide();
+            }
+        });
+    });
+</script>
