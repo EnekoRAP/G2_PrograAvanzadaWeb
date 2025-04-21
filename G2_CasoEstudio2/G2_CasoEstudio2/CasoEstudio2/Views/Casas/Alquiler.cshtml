@@ -1,0 +1,73 @@
+﻿@model CasoEstudio2.Models.CasasModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section style="padding: 0; margin: 0;">
+    <div class="h-100 d-flex justify-content-center align-items-center">
+        <div class="card w-100 text-black" style="border: none; border-radius: 25px; max-width: 100vw;">
+            <div class="card-body p-md-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                        <h2 class="mb-0 text-center text-black">Alquile una casa hoy!</h2>
+
+                        <form asp-action="Alquiler" asp-controller="Casas">
+                            <input type="datetime" asp-for="FechaAlquiler" hidden>
+
+                            <div class="form-group mb-4">
+                                <label class="form-label fw-bold">Casa</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-home fa-lg"></i></span>
+                                    <select asp-for="IdCasa" class="form-control" id="IdCasa" required>
+                                        <option value="">Seleccione una Casa</option>
+                                        @foreach (var casa in ViewBag.Casas)
+                                        {
+                                            <option value="@casa.IdCasa" data-precio="@casa.PrecioCasa">@casa.DescripcionCasa</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label class="form-label fw-bold">Precio Mensual</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-dollar-sign fa-lg"></i></span>
+                                    <input type="text" class="form-control" id="precioCasa" readonly>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label class="form-label fw-bold">Nombre del Usuario</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-user fa-lg"></i></span>
+                                    <input type="text" class="form-control" asp-for="UsuarioAlquiler" placeholder="Nombre del Usuario" required>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center mx-4">
+                                <input type="submit" class="btn btn-primary w-100 py-2 fs-5" value="Alquilar Casa">
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                        <img src="https://images.adsttc.com/media/images/5cc0/c99b/284d/d1ee/9200/0121/large_jpg/FEATURE_14051_00_N414_high.jpg?1556138381"
+                             class="img-fluid rounded-3" alt="Sample image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+               $('#IdCasa').change(function () {
+                   let opcion = $(this).find(':selected');
+                   let precio = opcion.data('precio');
+                   $('#precioCasa').val(precio);
+               });
+           });
+</script>

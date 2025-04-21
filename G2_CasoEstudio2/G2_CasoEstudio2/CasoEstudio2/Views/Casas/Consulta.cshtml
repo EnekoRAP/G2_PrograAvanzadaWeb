@@ -1,0 +1,52 @@
+﻿@model List<CasoEstudio2.Models.CasasModel>
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container my-4">
+	<div class="card shadow">
+		<div class="card-header bg-primary text-white">
+			<h2 class="mb-0 text-center text-white">Consulta de Casas</h2>
+		</div>
+		<div class="card-body">
+
+			@if (Model != null && Model.Any())
+			{
+				<div class="table-responsive">
+					<table class="table table-hover table-striped">
+						<thead class="table-light">
+							<tr>
+								<th scope="col">Descripción</th>
+								<th scope="col">Precio</th>
+								<th scope="col">Usuario</th>
+								<th scope="col">Estado</th>
+								<th scope="col">Fecha</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var item in Model)
+							{
+								@if (item.PrecioCasa >= 115000 && item.PrecioCasa <= 180000)
+								{<tr>
+									<td>@item.DescripcionCasa</td>
+									<td>@item.PrecioCasa</td>
+									<td>@(string.IsNullOrEmpty(item.UsuarioAlquiler) ? "N/A" : item.UsuarioAlquiler)</td>
+									<td>@(item.FechaAlquiler.HasValue ? "Reservada" : "Disponible")</td>
+									<td>@(item.FechaAlquiler.HasValue ? item.FechaAlquiler.Value.ToString("dd/MM/yyyy") : "N/A")</td>
+								</tr>
+								}
+							}
+						</tbody>
+					</table>
+				</div>
+			}
+			else
+			{
+				<div class="alert alert-info text-center">
+					<i class="bi bi-info-circle-fill me-2"></i>
+					Lo sentimos, no hay alquileres disponibles.
+				</div>
+			}
+		</div>
+	</div>
+</div>
